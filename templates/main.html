@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>一种自动问答系统的设计与实现</title>
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../static/js/keyword.js"></script>
+</head>
+<body>
+	<div class="inner-center main">
+  		<div class="content-inside">
+    		<div class="logo-box">
+      			<div class="logo-left">
+        			<img src="../static/img/hubeishifan.jpeg" alt="logo">
+      			</div>
+      			<div class="logo-right">
+        			<span>一种自动问答系统的设计与实现</span>
+      			</div>
+    		</div>
+    
+    		<!-- 搜索框 start -->				
+			<form action="/search">
+	    		<div id="search_form" class="search-section">
+					<div class="search-left">
+						<div id="search_logo" data-type="bing" class="search-logo"></div>
+						<div class="input-wrap">
+							<input id="search_keyword" class="search-input" name="keyword" maxlength="100" autocomplete="off" placeholder="请输入问题" value={{keyword}}>
+						</div>
+						<!--  搜索结果 start -->
+						<ul id="search_result" class="search-result">
+							{% if results == [] %}
+								<li class="result-item">暂无搜索结果</li>
+							{% endif %}
+							{% for result in results %}
+								<li class="result-item">{{result}}</li>
+							{% endfor %}
+						</ul>
+						<!--  搜索结果 end -->
+					</div>
+					<input class="search-submit" value="检索" id="search_submit" type="submit">
+				</div>
+			</form>
+    		<!-- 搜索框 end -->
+		</div>
+	</div>
+</body>
+</html>
