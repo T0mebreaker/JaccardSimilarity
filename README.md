@@ -1,1 +1,1 @@
-# JaccardSimilarity
+# Smart search engine with JaccardSimilarity
